@@ -1,0 +1,45 @@
+# Ignorovať kompilačné výstupy pre obe aplikácie
+frontend/dist/
+frontend/tmp/
+frontend/out-tsc/
+frontend/bazel-out/
+
+backend/target/
+backend/build/
+
+# Ignorovať `node_modules` pre frontend aj backend
+frontend/node_modules/
+backend/node_modules/
+
+# Debug logy
+frontend/npm-debug.log
+frontend/yarn-error.log
+backend/npm-debug.log
+backend/yarn-error.log
+
+# IDEs and editors (ponechávam iba pre VS Code)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Angular cache
+frontend/.angular/cache
+
+# Java Maven wrapper
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# Ignorovať build výstupy
+frontend/coverage/
+backend/coverage/
+
+# Ignorovať rôzne systémové súbory
+.DS_Store
+Thumbs.db
+
+# Spring Boot / Maven
+backend/HELP.md
+backend/target/
+!backend/.mvn/wrapper/maven-wrapper.jar

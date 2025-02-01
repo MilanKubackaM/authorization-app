@@ -1,0 +1,13 @@
+<h1 class="text-center mt-5 display-4">Welcome to this journey of revealing my secret!</h1>
+
+<app-navbar></app-navbar>
+
+<p class="text-center fw-bold mt-5 fs-4">
+    {{ secret }}
+</p>
+
+<div class="d-flex justify-content-center align-items-center vh-75">
+    <button class="btn btn-warning btn-lg px-4 py-3" (click)="revealSecret()">
+        Reveal Secret
+    </button>
+</div>
