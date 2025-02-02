@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
-  private apiUrl = 'http://localhost:8080/api/v1/auth';
+  private API_URL = environment.apiUrl;
   private tokenSubject = new BehaviorSubject<string | null>(localStorage.getItem('token'));
 
   constructor(private http: HttpClient) {
@@ -21,7 +22,7 @@ export class AuthService {
   }
 
   public login(email: string, password: string): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/authenticate`, { email, password }).pipe(
+    return this.http.post<{ token: string }>(`${this.API_URL}/authenticate`, { email, password }).pipe(
       tap(response => {
         if (response.token) {
           this.tokenSubject.next(response.token); 
@@ -31,7 +32,7 @@ export class AuthService {
   }
 
   public register(firstName: string, lastName: string, email: string, password: string): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/register`, {
+    return this.http.post<{ token: string }>(`${this.API_URL}/register`, {
       firstName,
       lastName,
       email,

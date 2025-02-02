@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@a
 import { AuthHttpInterceptor } from './shared/services/auth-http.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { environment } from './environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +23,6 @@ export const appConfig: ApplicationConfig = {
       useClass: AuthHttpInterceptor, 
       multi: true 
     },
-  ]
+    { provide: 'API_URL', useValue: environment.apiUrl }  
+  ],
 };
