@@ -40,3 +40,7 @@ Aplikácia je rozdelená na **backend (Spring Boot)** a **frontend (Angular 18)*
 - ngx-toastr - na informovanie používateľa o stavoch aplikácie (napr. úspešné prihlásenie).
 - RxJS - využívaná na dynamické spracovanie údajov.
 - Token je uložený v Local Storage - aby bol dostupný aj po zatvorení okna prehliadača.
+
+### Test frontendu
+- Napísali sme unit testy na overenie funkčnosti aplikácie. Nižšie sa nachádza výsledný report.
+![alt text](coverage.png)
