@@ -41,6 +41,14 @@ describe('LoginComponent', () => {
     expect(component.loginForm.controls['email'].valid).toBeFalse();
   });
 
+
+  it('should not call AuthService.login when form is invalid', () => {
+    component.loginForm.setValue({ email: '', password: '' }); 
+    component.onSubmit();
+
+    expect(authServiceSpy.login).not.toHaveBeenCalled();
+  });
+
   it('should successfully submit form and call AuthService', () => {
     component.loginForm.setValue({
       email: 'johndoe@example.com',

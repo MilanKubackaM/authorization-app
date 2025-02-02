@@ -36,6 +36,14 @@ describe('RegistrationComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
+  it('should not call AuthService.register when form is invalid', () => {
+    component.registrationForm.setValue({ firstName: '', lastName: '', email: '', password: '' }); 
+    component.onSubmit();
+
+    expect(authServiceSpy.register).not.toHaveBeenCalled();
+  });
+
   it('should initialize the registration form', () => {
     expect(component.registrationForm).toBeDefined();
     expect(component.registrationForm.controls['firstName']).toBeDefined();
