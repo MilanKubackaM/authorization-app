@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [CommonModule, RouterModule, LoginComponent, RegistrationComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   isLoggedIn$: Observable<string | null>;

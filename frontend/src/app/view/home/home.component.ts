@@ -9,7 +9,6 @@ import { first, Subscription } from 'rxjs';
   standalone: true,
   imports: [NavbarComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, OnDestroy {
 

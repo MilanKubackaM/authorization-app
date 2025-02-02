@@ -1,9 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { DataService } from './data.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { AuthService } from './auth.service';
 import { of } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('DataService', () => {
   let service: DataService;
@@ -14,15 +15,16 @@ describe('DataService', () => {
 
   beforeEach(() => {
     authServiceSpy = jasmine.createSpyObj('AuthService', ['getTokenObservable']);
-
+  
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       providers: [
         DataService,
-        { provide: AuthService, useValue: authServiceSpy }
+        { provide: AuthService, useValue: authServiceSpy },
+        provideHttpClient(),
+        provideHttpClientTesting()
       ]
     });
-
+  
     service = TestBed.inject(DataService);
     httpMock = TestBed.inject(HttpTestingController);
   });

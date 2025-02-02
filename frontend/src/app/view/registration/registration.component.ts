@@ -10,7 +10,6 @@ import { tap, catchError, EMPTY } from 'rxjs';
   selector: 'app-registration',
   standalone: true,
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css'],
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class RegistrationComponent {
