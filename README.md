@@ -43,4 +43,4 @@ Aplikácia je rozdelená na **backend (Spring Boot)** a **frontend (Angular 18)*
 
 ### Test frontendu
 - Napísali sme unit testy na overenie funkčnosti aplikácie. Nižšie sa nachádza výsledný report.
-![alt text](coverage.png)
+![alt text](coverage_report.png)
